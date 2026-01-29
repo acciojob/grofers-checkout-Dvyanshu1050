@@ -7,12 +7,12 @@ const getSum = () => {
   let total = 0;
 
   prices.forEach((p) => {
-    total += parseInt(p.innerText);
+    total += Number(p.textContent);
   });
 
   const table = document.querySelector("table");
 
-  // prevent duplicate row
+  
   if (document.getElementById("total-row")) return;
 
   const tr = document.createElement("tr");
@@ -20,7 +20,7 @@ const getSum = () => {
 
   const td = document.createElement("td");
   td.colSpan = 2;
-  td.innerText = "Total Price = " + total;
+  td.textContent = "Total Price = " + total;
 
   tr.appendChild(td);
   table.appendChild(tr);
